@@ -1,0 +1,115 @@
+1) npm create vite@latest
+
+2) npm install react-data-table-component styled-components axios 
+react-icons react-router-dom tailwindcss postcss autoprefixer
+
+3) npm init -y
+
+4) npm install bcrypt cors express jsonwebtoken mongoose multer nodemon path
+5) package.json -> type = module
+6) start nodemon --env-file=.env index.js
+
+
+📍 Working Routes:
+/ → Redirects to /login
+/login → Login page with demo credentials
+/admin-dashboard → Main dashboard (index route)
+/admin-dashboard/departments → Department management
+/admin-dashboard/employees → Employee management (coming soon)
+/admin-dashboard/leave → Leave management (coming soon)
+/admin-dashboard/salary → Salary management (coming soon)
+/admin-dashboard/settings → Settings (coming soon)
+
+
+🏗️ Project Architecture
+Frontend (React + Vite + Tailwind CSS)
+Location: frontend directory
+Port: http://localhost:5176
+Tech Stack: React 19, React Router 7, Tailwind CSS v4, Axios
+Backend (Node.js + Express + MongoDB)
+Location: server directory
+Port: http://localhost:5000
+Tech Stack: Express.js, MongoDB, JWT, bcrypt
+
+ Complete Workflow - Step by Step
+Step 1: Project Setup & Dependencies
+Backend Setup:
+Frontend Setup:
+Step 2: Database Configuration
+MongoDB Connection (db.js):
+
+User Schema (User.js):
+
+Step 3: Authentication Flow
+3.1 User Registration/Login (Backend)
+3.2 JWT Middleware (Backend)
+3.3 Frontend Authentication Context
+Step 4: Routing & Navigation
+4.1 Main App Routes (App.jsx):
+4.2 Route Protection:
+4.3 Admin Dashboard Routes (AdminDashboard.jsx):
+Step 5: Component Structure
+5.1 Layout Components:
+Sidebar: Navigation menu
+Dashboard: Main overview page
+ErrorBoundary: Error handling
+5.2 Page Components:
+Login: Authentication form
+AdminDashboard: Admin control panel
+EmployeeDashboard: Employee portal
+Department: Department management
+Employees: Employee management
+Step 6: State Management
+6.1 Global State (Context API):
+6.2 Local State (useState):
+Form data (email, password)
+Loading states
+Error messages
+UI state
+Step 7: API Communication
+7.1 Backend API Endpoints:
+7.2 Frontend API Calls:
+🚀 How to Run the Project
+Step 1: Start Backend Server
+Step 2: Start Frontend Development Server
+Step 3: Access the Application
+Open browser: http://localhost:5176
+Use demo credentials:
+Admin: admin@test.com / admin123
+Employee: employee@test.com / emp123
+🔐 Security Features
+Password Hashing: bcrypt for secure password storage
+JWT Authentication: Stateless authentication
+Route Protection: Private and role-based routes
+CORS Configuration: Cross-origin request handling
+Error Handling: Global error boundaries
+📱 User Experience Flow
+For Admin Users:
+Login → Admin Dashboard
+Access all management features:
+View/manage departments
+View/manage employees
+Handle leave requests
+Manage salaries
+System settings
+For Employee Users:
+Login → Employee Dashboard
+Access employee features:
+View personal info
+Submit leave requests
+View salary information
+Update profile
+🛠️ Development Features
+Hot Module Replacement: Instant updates during development
+Error Boundaries: Graceful error handling
+Console Error Filtering: Clean development experience
+Responsive Design: Works on all devices
+Modern React: Uses latest React 19 features
+📊 Current Status
+✅ Authentication System: Fully functional
+✅ Role-based Access: Admin/Employee separation
+✅ Responsive UI: Mobile-friendly design
+✅ Error Handling: Comprehensive error management
+✅ Development Ready: Hot reload, debugging tools
+
+This Employee Management System provides a solid foundation for managing employees, departments, and organizational workflows with proper authentication and role-based access control.

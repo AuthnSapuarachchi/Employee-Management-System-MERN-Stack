@@ -1,0 +1,116 @@
+1. npm create vite@latest
+
+2. npm install react-data-table-component styled-components axios
+   react-icons react-router-dom tailwindcss postcss autoprefixer
+
+3. npm init -y
+
+4. npm install bcrypt cors express jsonwebtoken mongoose multer nodemon path
+5. package.json -> type = module
+6. start nodemon --env-file=.env index.js
+
+📍 Working Routes:
+/ → Redirects to /login
+/login → Login page with demo credentials
+/admin-dashboard → Main dashboard (index route)
+/admin-dashboard/departments → Department management
+/admin-dashboard/employees → Employee management (coming soon)
+/admin-dashboard/leave → Leave management (coming soon)
+/admin-dashboard/salary → Salary management (coming soon)
+/admin-dashboard/settings → Settings (coming soon)
+
+🏗️ Project Architecture
+Frontend (React + Vite + Tailwind CSS)
+Location: frontend directory
+Port: http://localhost:5176
+Tech Stack: React 19, React Router 7, Tailwind CSS v4, Axios
+Backend (Node.js + Express + MongoDB)
+Location: server directory
+Port: http://localhost:5000
+Tech Stack: Express.js, MongoDB, JWT, bcrypt
+
+Complete Workflow - Step by Step
+Step 1: Project Setup & Dependencies
+Backend Setup: cd server
+npm install # Dependencies: express, mongoose, bcrypt, jsonwebtoken, cors, dotenv, nodemon
+
+Frontend Setup: cd frontend
+npm install # Dependencies: react, react-dom, react-router-dom, axios, react-icons, tailwindcss
+
+Step 2: Database Configuration
+MongoDB Connection (db.js): mongoose.connect(process.env.MONGODB_URI)
+
+User Schema (User.js):
+{
+name: String,
+email: String,
+password: String (hashed),
+role: 'admin' | 'employee',
+profileImage: String,
+createdAt: Date,
+updatedAt: Date
+}
+
+Step 3: Authentication Flow
+3.1 User Registration/Login (Backend)
+// server/controllers/authController.js
+login(email, password) {
+
+1. Find user by email
+2. Compare password with bcrypt
+3. Generate JWT token
+4. Return user data + token
+   }
+
+
+I'll analyze your Employee Management System project and explain how it works step by step. Let me first examine the project structure and key files to understand the complete workflow.
+
+Read auth.js
+
+Read index.js
+
+Read authController.js
+
+Read User.js
+
+Read EMS
+
+Read server
+
+Read package.json
+
+Read package.json
+
+Now let me check a few more key files to understand the complete workflow:
+
+Read authMiddleware.js
+
+Read AdminDashboard.jsx
+
+Read db.js
+
+🏢 Employee Management System (EMS) - Complete Workflow Guide
+📋 Project Overview
+This is a MERN Stack (MongoDB, Express.js, React.js, Node.js) Employee Management System with role-based authentication and dashboard functionality.
+
+🏗️ Project Architecture
+Frontend (React + Vite + Tailwind CSS)
+Location: frontend directory
+Port: http://localhost:5176
+Tech Stack: React 19, React Router 7, Tailwind CSS v4, Axios
+Backend (Node.js + Express + MongoDB)
+Location: server directory
+Port: http://localhost:5000
+Tech Stack: Express.js, MongoDB, JWT, bcrypt
+🔄 Complete Workflow - Step by Step
+Step 1: Project Setup & Dependencies
+Backend Setup:
+Frontend Setup:
+Step 2: Database Configuration
+MongoDB Connection (db.js):
+
+User Schema (User.js):
+
+Step 3: Authentication Flow
+3.1 User Registration/Login (Backend)
+3.2 JWT Middleware (Backend)

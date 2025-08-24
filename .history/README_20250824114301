@@ -1,0 +1,109 @@
+1. npm create vite@latest
+
+2. npm install react-data-table-component styled-components axios
+   react-icons react-router-dom tailwindcss postcss autoprefixer
+
+3. npm init -y
+
+4. npm install bcrypt cors express jsonwebtoken mongoose multer nodemon path
+5. package.json -> type = module
+6. start nodemon --env-file=.env index.js
+
+📍 Working Routes:
+/ → Redirects to /login
+/login → Login page with demo credentials
+/admin-dashboard → Main dashboard (index route)
+/admin-dashboard/departments → Department management
+/admin-dashboard/employees → Employee management (coming soon)
+/admin-dashboard/leave → Leave management (coming soon)
+/admin-dashboard/salary → Salary management (coming soon)
+/admin-dashboard/settings → Settings (coming soon)
+
+🏗️ Project Architecture
+Frontend (React + Vite + Tailwind CSS)
+Location: frontend directory
+Port: http://localhost:5176
+Tech Stack: React 19, React Router 7, Tailwind CSS v4, Axios
+Backend (Node.js + Express + MongoDB)
+Location: server directory
+Port: http://localhost:5000
+Tech Stack: Express.js, MongoDB, JWT, bcrypt
+
+Complete Workflow - Step by Step
+Step 1: Project Setup & Dependencies
+Backend Setup: cd server
+npm install # Dependencies: express, mongoose, bcrypt, jsonwebtoken, cors, dotenv, nodemon
+
+Frontend Setup: cd frontend
+npm install # Dependencies: react, react-dom, react-router-dom, axios, react-icons, tailwindcss
+
+Step 2: Database Configuration
+MongoDB Connection (db.js): mongoose.connect(process.env.MONGODB_URI)
+
+User Schema (User.js):
+{
+name: String,
+email: String,
+password: String (hashed),
+role: 'admin' | 'employee',
+profileImage: String,
+createdAt: Date,
+updatedAt: Date
+}
+
+Step 3: Authentication Flow
+3.1 User Registration/Login (Backend)
+// server/controllers/authController.js
+login(email, password) {
+
+1. Find user by email
+2. Compare password with bcrypt
+3. Generate JWT token
+4. Return user data + token
+   }
+
+3.2 JWT Middleware (Backend)
+// server/middleware/authMiddleware.js
+verifyUser(token) {
+
+1. Extract token from Authorization header
+2. Verify JWT token
+3. Find user in database
+4. Attach user to request object
+   }
+
+3.3 Frontend Authentication Context
+// frontend/src/context/authContext.jsx
+AuthProvider {
+
+1. Check localStorage for token
+2. Verify token with backend
+3. Manage user state globally
+4. Handle login/logout
+
+Step 4: Routing & Navigation
+4.1 Main App Routes (App.jsx):
+Routes:
+/ → Navigate to /login
+/login → Login Component
+/admin-dashboard/_ → Protected Admin Routes
+/employee-dashboard/_ → Protected Employee Routes
+
+4.2 Route Protection:
+PrivateRoutes: Check if user is authenticated
+RoleBaseRoutes: Check if user has required role
+
+4.3 Admin Dashboard Routes (AdminDashboard.jsx):
+/admin-dashboard/ → Dashboard (overview)
+/admin-dashboard/departments → Department Management
+/admin-dashboard/employees → Employee Management  
+/admin-dashboard/leave → Leave Management
+/admin-dashboard/salary → Salary Management
+/admin-dashboard/settings → Settings
+
+/admin-dashboard/ → Dashboard (overview)
+/admin-dashboard/departments → Department Management
+/admin-dashboard/employees → Employee Management  
+/admin-dashboard/leave → Leave Management
+/admin-dashboard/salary → Salary Management
+/admin-dashboard/settings → Settings
