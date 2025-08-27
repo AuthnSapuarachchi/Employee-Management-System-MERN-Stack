@@ -1,0 +1,3 @@
+const addDepartment = (req, res) => {
+    
+}
