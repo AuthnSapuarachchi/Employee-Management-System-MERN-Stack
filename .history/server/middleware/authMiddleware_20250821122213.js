@@ -1,3 +1,0 @@
-const verifyUser = async () => {
-    try
-}
