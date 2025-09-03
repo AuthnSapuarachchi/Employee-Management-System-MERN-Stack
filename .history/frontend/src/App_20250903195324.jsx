@@ -46,7 +46,6 @@ const App = () => {
         {/* Department Routes */}
         <Route path="/admin-dashboard/departments" element={<DepartmentList />} />
         <Route path="/admin-dashboard/add-department" element={<AddDepartment />} />
-        <Route path="/admin-dashboard/edit-department/:id" element={<EditDepartment />} />
 
         {/* Fallback Route - Handle unknown routes */}
         <Route path="*" element={<Navigate to="/login" replace />} />

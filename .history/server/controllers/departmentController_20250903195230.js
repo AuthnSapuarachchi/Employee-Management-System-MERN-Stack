@@ -96,49 +96,6 @@ const getDepartments = async (req, res) => {
     }
 }
 
-// Get Single Department by ID
-const getDepartmentById = async (req, res) => {
-    try {
-        console.log('=== GET DEPARTMENT BY ID REQUEST ===');
-        console.log('Department ID:', req.params.id);
-        console.log('User from auth:', req.user);
-        
-        const { id } = req.params;
-        const department = await Department.findById(id);
-        
-        if (!department) {
-            console.log('Department not found with ID:', id);
-            return res.status(404).json({ 
-                success: false, 
-                error: 'Department not found' 
-            });
-        }
-        
-        console.log('Department fetched successfully:', department);
-        return res.status(200).json({ 
-            success: true, 
-            department 
-        });
-    } catch (error) {
-        console.error('=== GET DEPARTMENT BY ID ERROR ===');
-        console.error('Error type:', error.name);
-        console.error('Error message:', error.message);
-        console.error('Full error:', error);
-        
-        if (error.name === 'CastError') {
-            return res.status(400).json({ 
-                success: false, 
-                error: 'Invalid department ID format' 
-            });
-        }
-        
-        return res.status(500).json({ 
-            success: false, 
-            error: 'Server error while fetching department. Please try again.' 
-        });
-    }
-}
-
 // Update Department
 const updateDepartment = async (req, res) => {
     try {
@@ -249,4 +206,4 @@ const deleteDepartment = async (req, res) => {
     }
 }
 
-export { addDepartment, getDepartments, getDepartmentById, updateDepartment, deleteDepartment };
+export { addDepartment, getDepartments, updateDepartment, deleteDepartment };

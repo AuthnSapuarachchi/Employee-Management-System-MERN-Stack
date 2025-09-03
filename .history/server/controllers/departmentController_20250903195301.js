@@ -249,4 +249,4 @@ const deleteDepartment = async (req, res) => {
     }
 }
 
-export { addDepartment, getDepartments, getDepartmentById, updateDepartment, deleteDepartment };
+export { addDepartment, getDepartments, updateDepartment, deleteDepartment };

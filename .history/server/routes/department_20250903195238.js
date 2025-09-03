@@ -13,8 +13,6 @@ router.get('/test', (req, res) => {
 router.post('/add', addDepartment);
 // Read
 router.get('/', getDepartments);
-// Read single department
-router.get('/:id', authMiddleware, getDepartmentById);
 // Update
 router.put('/:id', authMiddleware, updateDepartment);
 // Delete

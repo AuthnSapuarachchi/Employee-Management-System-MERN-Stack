@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Sidebar from '../Dashboard/Sidebar'
 import axios from 'axios'
 
 const DepartmentList = () => {
-  const navigate = useNavigate();
   const [departments, setDepartments] = useState([]);
   const [filteredDepartments, setFilteredDepartments] = useState([]);
   const [error, setError] = useState('');
@@ -165,7 +164,7 @@ const DepartmentList = () => {
                     <td className="p-4">
                       <div className="flex justify-center space-x-2">
                         <button
-                          onClick={() => navigate(`/admin-dashboard/edit-department/${department._id}`)}
+                          on
                           className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
                           title="Edit Department"
                         >
