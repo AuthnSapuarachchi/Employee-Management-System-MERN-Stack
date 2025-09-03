@@ -166,7 +166,6 @@ const DepartmentList = () => {
                     </td>
                     <td className="p-4">
                       <div className="flex justify-center space-x-2">
-                        {/* Current action buttons */}
                         <button
                           onClick={() => navigate(`/admin-dashboard/edit-department/${department._id}`)}
                           className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
@@ -181,13 +180,6 @@ const DepartmentList = () => {
                         >
                           Delete
                         </button>
-                        
-                        {/* Alternative: Use DepartmentHelper buttons */}
-                        {/* <DepartmentButtons 
-                          department={department}
-                          onEdit={(id) => navigate(`/admin-dashboard/edit-department/${id}`)}
-                          onDelete={handleDelete}
-                        /> */}
                       </div>
                     </td>
                   </tr>

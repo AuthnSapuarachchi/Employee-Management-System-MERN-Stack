@@ -1,44 +1,43 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-// Column definitions for data table
 export const columns = [
-  {
-    name: 'S.No',
+{
+    name: 'S no',
     selector: (row) => row.sno,
-    sortable: true,
-    width: '80px'
-  },
-  {
+},
+{
     name: 'Department Name',
     selector: (row) => row.name,
-    sortable: true,
-    grow: 2
-  },
-  {
+},
+{
     name: 'Description',
     selector: (row) => row.description,
-    sortable: true,
-    grow: 3
-  },
-  {
+},
+{
     name: 'Actions',
-    selector: (row) => row.action,
-    center: true,
-    width: '150px'
-  }
-];
+    selector: (row) => row.action
+}
+]
 
-// Reusable Department Action Buttons Component
 export const DepartmentButtons = ({ department, onEdit, onDelete }) => {
+    const navigate = useNavigate();
+
     const handleEdit = () => {
         if (onEdit) {
             onEdit(department._id);
+        } else {
+            navigate(`/admin-dashboard/edit-department/${department._id}`);
         }
     };
 
     const handleDelete = () => {
         if (onDelete) {
             onDelete(department._id);
+        } else {
+            if (window.confirm('Are you sure you want to delete this department?')) {
+                // Default delete logic would go here
+                console.log('Delete department:', department._id);
+            }
         }
     };
 
@@ -65,38 +64,13 @@ export const DepartmentButtons = ({ department, onEdit, onDelete }) => {
 // Helper function to transform department data for table display
 export const transformDepartmentData = (departments, onEdit, onDelete) => {
     return departments.map((department, index) => ({
-        id: department._id,
         sno: index + 1,
         name: department.name,
-        description: department.description || 'No description provided',
-        action: (
-            <DepartmentButtons 
-                key={department._id}
-                department={department} 
-                onEdit={onEdit}
-                onDelete={onDelete}
-            />
-        )
+        description: department.description,
+        action: <DepartmentButtons 
+            department={department} 
+            onEdit={onEdit}
+            onDelete={onDelete}
+        />
     }));
-};
-
-// Department table styles
-export const tableStyles = {
-    header: {
-        style: {
-            fontSize: '14px',
-            fontWeight: 600,
-            backgroundColor: '#f9fafb',
-            borderBottom: '1px solid #e5e7eb'
-        }
-    },
-    rows: {
-        style: {
-            fontSize: '14px',
-            '&:hover': {
-                backgroundColor: '#f9fafb',
-                cursor: 'pointer'
-            }
-        }
-    }
 };

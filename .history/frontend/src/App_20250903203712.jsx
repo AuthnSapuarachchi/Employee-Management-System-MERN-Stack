@@ -50,10 +50,6 @@ const App = () => {
         <Route path="/admin-dashboard/add-department" element={<AddDepartment />} />
         <Route path="/admin-dashboard/edit-department/:id" element={<EditDepartment />} />
 
-        {/* Employee Routes */}
-        <Route path="/admin-dashboard/employees" element={<EmployeeList />} />
-        <Route path="/admin-dashboard/add-employee" element={<AddEmployee />} />
-
         {/* Fallback Route - Handle unknown routes */}
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
